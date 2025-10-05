@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  width: 96%;
+  margin: 0 auto;
+}
+input {
+  outline: none;
+  border: none;
+}
+button {
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+}
+html, body{
+  font-family: "Montserrat" sans-serif;
+}
