@@ -8,7 +8,7 @@ const Hero = () => {
   return (
     <section className={scss.hero}>
       <div className={scss.content}>
-        <div className={scss.block}>
+        <div className={scss.block} onClick={() => route.push("/testIQ")}>
           <img src={"/testIQ.png"} alt="img" />
           <h1>🧠 Проверь свой IQ</h1>
         </div>
