@@ -18,7 +18,7 @@ const Three: FC<BlockProps> = ({ onNext }) => {
   const dispatch = useAppDispatch();
   const handleChoose = (choice: string) => {
     if(choice === "Кошка"){
-      return dispatch(handleCount())
+       dispatch(handleCount())
     }
     if(isDisabled) return;
     setIsDisabled(true)

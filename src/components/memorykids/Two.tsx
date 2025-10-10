@@ -18,7 +18,7 @@ const Two: React.FC<BlockProps> = ({ onNext }) => {
   const dispatch = useAppDispatch();
   const handleChoose = (choice: string) => {
     if(choice === "Рыба"){
-      return dispatch(handleCount())
+       dispatch(handleCount())
     }
     if(isDisabled) return;
     setIsDisabled(true)

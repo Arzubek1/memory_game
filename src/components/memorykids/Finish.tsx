@@ -5,22 +5,19 @@ import { useAppSelector } from "@/hooks";
 
 
 const Finish = () => {
-
+const {count} = useAppSelector((s) => s.kidsStore)
   return (
     <div className={scss.finish}>
       <div className={scss.card}>
         <h2>🎉 Поздравляем!</h2>
         <p>
-          Вы угадали <span>{}</span> животных!
+          Вы угадали <span>{count}</span> животных!
         </p>
 
         <div className={scss.buttons}>
           <a href="/" className={scss.back}>
             <FaArrowLeft /> Назад
           </a>
-          <button className={scss.restart}>
-            <FaRedoAlt /> Играть снова
-          </button>
         </div>
       </div>
     </div>

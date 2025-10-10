@@ -17,7 +17,7 @@ const Ten: FC<BlockProps> = () => {
   const dispatch = useAppDispatch();
   const handleChoose = (choice: string) => {
     if(choice === "Лошадь"){
-      return dispatch(handleCount())
+       dispatch(handleCount())
     }
     if (isDisabled) return;
     setIsDisabled(true);
