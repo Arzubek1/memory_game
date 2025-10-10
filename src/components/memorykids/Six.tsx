@@ -5,13 +5,13 @@ import Image from "next/image";
 import { handleBlocks } from "@/toolkit/kidsSlice";
 import { useAppDispatch, useAppSelector } from "@/hooks";
 
-interface SixProps {
+interface BlockProps {
   onNext?: () => void;
 }
 
 const variants = ["Кошка", "Тигр", "Орёл", "Левь"];
 
-const Six: FC<SixProps> = ({ onNext }) => {
+const Six: FC<BlockProps> = ({ onNext }) => {
   const [isDisabled, setIsDisabled] = useState(false);
   const { find } = useAppSelector((s) => s.kidsStore);
   const dispatch = useAppDispatch();

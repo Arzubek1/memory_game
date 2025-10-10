@@ -5,12 +5,12 @@ import Image from "next/image";
 import { handleBlocks } from "@/toolkit/kidsSlice";
 import { useAppDispatch, useAppSelector } from "@/hooks";
 
-interface FiveProps {
+interface BlockProps {
   onNext?: () => void;
 }
 
 const variants = ["Воробей", "Тигр", "Орёл", "Слон"];
-const Five: FC<FiveProps> = ({ onNext }) => {
+const Five: FC<BlockProps> = ({ onNext }) => {
   const [isDisabled, setIsDisabled] = useState(false);
 
   const { find } = useAppSelector((s) => s.kidsStore);

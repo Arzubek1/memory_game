@@ -5,33 +5,33 @@ import Image from "next/image";
 import { handleBlocks } from "@/toolkit/kidsSlice";
 import { useAppDispatch, useAppSelector } from "@/hooks";
 
-interface SevenProps {
+interface BlockProps {
   onNext?: () => void;
 }
 
-const variants = ["Козёл", "Жираф", "Баран", "Ёжик"];
+const variants = ["Заяц", "Жираф", "Носорог", "Медвед"];
 
-const Seven: FC<SevenProps> = ({onNext}) => {
-      const [isDisabled, setIsDisabled] = useState(false);
-      const { find } = useAppSelector((s) => s.kidsStore);
-      const dispatch = useAppDispatch();
-      const handleChoose = (choice: string) => {
-        if (isDisabled) return;
-        setIsDisabled(true);
-        dispatch(handleBlocks(true));
-        console.log("Choice:", choice);
-        setTimeout(() => {
-          onNext?.();
-          dispatch(handleBlocks(false));
-          setIsDisabled(false);
-        }, 700);
-      };
-    return (
-       <div className={scss.block}>
+const Seven: FC<BlockProps> = ({ onNext }) => {
+  const [isDisabled, setIsDisabled] = useState(false);
+  const { find } = useAppSelector((s) => s.kidsStore);
+  const dispatch = useAppDispatch();
+  const handleChoose = (choice: string) => {
+    if (isDisabled) return;
+    setIsDisabled(true);
+    dispatch(handleBlocks(true));
+    console.log("Choice:", choice);
+    setTimeout(() => {
+      onNext?.();
+      dispatch(handleBlocks(false));
+      setIsDisabled(false);
+    }, 700);
+  };
+  return (
+    <div className={scss.block}>
       <div className={scss.image}>
         <h4>Угадай животное</h4>
         <Image
-          src="/images/memorykids/kozel.jpg"
+          src="/images/memorykids/jiraf.jpg"
           alt="dog"
           width={380}
           height={220}
@@ -47,7 +47,7 @@ const Seven: FC<SevenProps> = ({onNext}) => {
             style={{
               backgroundColor: !find
                 ? "#9d4edd"
-                : find && el === "Козёл"
+                : find && el === "Жираф"
                 ? "green"
                 : "red",
             }}
@@ -57,7 +57,7 @@ const Seven: FC<SevenProps> = ({onNext}) => {
         ))}
       </div>
     </div>
-    );
+  );
 };
 
 export default Seven;

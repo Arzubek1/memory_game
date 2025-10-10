@@ -3,20 +3,23 @@ import React, { useState } from "react";
 import scss from "./Blocks.module.scss";
 import Image from "next/image";
 import { useAppDispatch, useAppSelector } from "@/hooks";
-import { handleBlocks } from "@/toolkit/kidsSlice";
+import { handleBlocks, handleCount } from "@/toolkit/kidsSlice";
 
-interface TwoProps {
+interface BlockProps {
   onNext?: () => void;
 }
 
 const variants = ["Змея", "Енот", "Тигр", "Рыба"];
 
-const Two: React.FC<TwoProps> = ({ onNext }) => {
+const Two: React.FC<BlockProps> = ({ onNext }) => {
   const [isDisabled, setIsDisabled] = useState(false);
 
-  const { find } = useAppSelector((s) => s.kidsStore);
+  const { find} = useAppSelector((s) => s.kidsStore);
   const dispatch = useAppDispatch();
   const handleChoose = (choice: string) => {
+    if(choice === "Рыба"){
+      return dispatch(handleCount())
+    }
     if(isDisabled) return;
     setIsDisabled(true)
     dispatch(handleBlocks(true));

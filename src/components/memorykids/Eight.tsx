@@ -2,29 +2,28 @@
 import React, { FC, useState } from "react";
 import scss from "./Blocks.module.scss";
 import Image from "next/image";
-import { useAppDispatch, useAppSelector } from "@/hooks";
 import { handleBlocks } from "@/toolkit/kidsSlice";
+import { useAppDispatch, useAppSelector } from "@/hooks";
 
 interface BlockProps {
   onNext?: () => void;
 }
 
-const variants = ["Кошка", "Собака", "Тигр", "Левь"];
+const variants = ["Козёл", "Жираф", "Баран", "Ёжик"];
 
-const Three: FC<BlockProps> = ({ onNext }) => {
+const Eight: FC<BlockProps> = ({onNext}) => {
   const [isDisabled, setIsDisabled] = useState(false);
-
   const { find } = useAppSelector((s) => s.kidsStore);
   const dispatch = useAppDispatch();
   const handleChoose = (choice: string) => {
-    if(isDisabled) return;
-    setIsDisabled(true)
+    if (isDisabled) return;
+    setIsDisabled(true);
     dispatch(handleBlocks(true));
     console.log("Choice:", choice);
     setTimeout(() => {
       onNext?.();
       dispatch(handleBlocks(false));
-      setIsDisabled(false)
+      setIsDisabled(false);
     }, 700);
   };
   return (
@@ -32,7 +31,7 @@ const Three: FC<BlockProps> = ({ onNext }) => {
       <div className={scss.image}>
         <h4>Угадай животное</h4>
         <Image
-          src="/images/memorykids/cat.jpg"
+          src="/images/memorykids/kozel.jpg"
           alt="dog"
           width={380}
           height={220}
@@ -48,7 +47,7 @@ const Three: FC<BlockProps> = ({ onNext }) => {
             style={{
               backgroundColor: !find
                 ? "#9d4edd"
-                : find && el === "Кошка"
+                : find && el === "Козёл"
                 ? "green"
                 : "red",
             }}
@@ -61,4 +60,4 @@ const Three: FC<BlockProps> = ({ onNext }) => {
   );
 };
 
-export default Three;
+export default Eight;
