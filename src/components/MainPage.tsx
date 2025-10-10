@@ -3,7 +3,12 @@ import Hero from './main/Hero';
 
 const MainPage = () => {
     return (
-        <div>
+        <div  style={{
+        background: `url(/mainbg.jpg)`,
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+      }}>
             <Hero/>
         </div>
     );
