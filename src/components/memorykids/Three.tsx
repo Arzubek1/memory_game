@@ -3,7 +3,7 @@ import React, { FC, useState } from "react";
 import scss from "./Blocks.module.scss";
 import Image from "next/image";
 import { useAppDispatch, useAppSelector } from "@/hooks";
-import { handleBlocks } from "@/toolkit/kidsSlice";
+import { handleBlocks, handleCount } from "@/toolkit/kidsSlice";
 
 interface BlockProps {
   onNext?: () => void;
@@ -17,6 +17,9 @@ const Three: FC<BlockProps> = ({ onNext }) => {
   const { find } = useAppSelector((s) => s.kidsStore);
   const dispatch = useAppDispatch();
   const handleChoose = (choice: string) => {
+    if(choice === "Кошка"){
+      return dispatch(handleCount())
+    }
     if(isDisabled) return;
     setIsDisabled(true)
     dispatch(handleBlocks(true));
