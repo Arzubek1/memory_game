@@ -1,8 +1,12 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import scss from "./MainTestPage.module.scss";
 import { FaChevronLeft } from "react-icons/fa6";
+import Page1 from "./Page1";
 
 const MainTestPage = () => {
+  const [step, setStep] = useState(1);
+  const next = () => setStep((s) => s + 1);
   return (
     <section className={scss.mainTestPage}>
       <div className="container">
@@ -13,15 +17,15 @@ const MainTestPage = () => {
               <FaChevronLeft />
             </a>
             <h3>
-                <span>01</span>
-                <span>/10</span>
+              <span>{String(step).padStart(2, "0")}</span>
+              <span>/10</span>
             </h3>
           </div>
           <div className={scss.timer}>
-            <span></span>
+            <span style={{ width: `${(step / 10) * 100}%` }}></span>
           </div>
           <div className={scss.blocks}>
-
+            <Page1 onNext={next} />
           </div>
         </div>
       </div>

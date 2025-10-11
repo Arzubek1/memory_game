@@ -9,7 +9,7 @@ interface BlockProps {
   onNext?: () => void;
 }
 
-const variants = ["Кошка", "Мышь", "Собака", "Кролик"];
+const variants: string[] = ["Кошка", "Мышь", "Собака", "Кролик"];
 
 const One: React.FC<BlockProps> = ({ onNext }) => {
   const [isDisabled, setIsDisabled] = useState(false);
