@@ -5,22 +5,19 @@ import { useAppDispatch } from "@/hooks";
 import { handleCorrect, handleScore } from "@/toolkit/testSlice";
 import { GrFormNextLink } from "react-icons/gr";
 
-const variants: string[] = [
-  "A) Возраст",
-  "B) Шарик",
-  "C) Дрон",
-  "D) Настроение по понедельникам",
-];
+const variants: string[] = ["A) Кенгуру", "B) Собака", "C) Рыба", "D) Обезяна"];
 interface TestProps {
   onNext?: () => void;
 }
-const Page1: FC<TestProps> = ({ onNext }) => {
+
+const Page3: FC<TestProps> = ({ onNext }) => {
   const [isDisabled, setIsDisabled] = useState(false);
   const [answers, setAnswers] = useState(false);
+
   const dispatch = useAppDispatch();
   const handleChoose = (choose: string) => {
-    setAnswers(true)
-    if (choose === "A) Возраст") {
+    setAnswers(true);
+    if (choose === "C) Всё те же 3 кг") {
       dispatch(handleScore());
     }
     if (isDisabled) return;
@@ -33,11 +30,11 @@ const Page1: FC<TestProps> = ({ onNext }) => {
   return (
     <div className={scss.block}>
       <div className={scss.text}>
-        <h4>На внимательность</h4>
+        <h4>Ассоциация</h4>
         <p>
           {!answers
-            ? "Что поднимается, но никогда не опускается?"
-            : "A) Возраст — растёт, но не падает (если только не в паспорте 😄)."}
+            ? "Какое слово лишнее?"
+            : "Правильный ответ 'С) Рыба' рыба живёт в воде, остальные на суше"}
         </p>
       </div>
       <div className={scss.varinats}>
@@ -50,10 +47,12 @@ const Page1: FC<TestProps> = ({ onNext }) => {
             {el}
           </button>
         ))}
-        <h5 onClick={() => onNext?.()}>Следюший <GrFormNextLink /></h5>
+        <h5 onClick={() => onNext?.()}>
+          Следюший <GrFormNextLink />
+        </h5>
       </div>
     </div>
   );
 };
 
-export default Page1;
+export default Page3;

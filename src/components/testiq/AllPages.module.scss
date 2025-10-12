@@ -23,9 +23,9 @@
     }
 
     p {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-size: 18px;
       color: #efecec;
       margin-top: 10px;
@@ -38,13 +38,15 @@
 
   .varinats {
     display: flex;
+    align-items: center;
     flex-direction: column;
     gap: 15px;
 
     button {
       background: #f4f8ff;
       border: 2px solid #cfdfff;
-      padding: 12px 20px;
+      width: 280px;
+      height: 40px;
       border-radius: 12px;
       font-size: 16px;
       font-weight: 500;
@@ -61,6 +63,23 @@
       &:active {
         transform: scale(0.98);
         background: #1e56c9;
+      }
+    }
+    h5 {
+      width: 130px;
+      height: 36px;
+      border-radius: 6px;
+      border: none;
+      color: rgb(107, 106, 106);
+      background: #f2fd13;
+      cursor: pointer;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        background: rgb(213, 221, 53)
       }
     }
   }

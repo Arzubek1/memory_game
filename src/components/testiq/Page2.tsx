@@ -3,6 +3,7 @@ import React, { FC, useState } from "react";
 import scss from "./AllPages.module.scss";
 import { useAppDispatch } from "@/hooks";
 import { handleCorrect, handleScore } from "@/toolkit/testSlice";
+import { GrFormNextLink } from "react-icons/gr";
 
 const variants: string[] = [
   "A) 6 кг",
@@ -16,8 +17,11 @@ interface TestProps {
 
 const Page2: FC<TestProps> = ({ onNext }) => {
   const [isDisabled, setIsDisabled] = useState(false);
+  const [answers, setAnswers] = useState(false);
+
   const dispatch = useAppDispatch();
   const handleChoose = (choose: string) => {
+    setAnswers(true);
     if (choose === "C) Всё те же 3 кг") {
       dispatch(handleScore());
     }
@@ -25,7 +29,6 @@ const Page2: FC<TestProps> = ({ onNext }) => {
     setIsDisabled(true);
     dispatch(handleCorrect(true));
     setTimeout(() => {
-      onNext?.();
       dispatch(handleCorrect(false));
     }, 700);
   };
@@ -34,7 +37,9 @@ const Page2: FC<TestProps> = ({ onNext }) => {
       <div className={scss.text}>
         <h4>(Парадокс мышления)</h4>
         <p>
-          Если утка стоит на одной ноге, весит 3 кг, сколько она весит на двух?
+          {!answers
+            ? "Если утка стоит на одной ноге, весит 3 кг, сколько она весит на двух?"
+            : "C) Всё те же 3 кг — количество ног не влияет на массу."}
         </p>
       </div>
       <div className={scss.varinats}>
@@ -47,6 +52,9 @@ const Page2: FC<TestProps> = ({ onNext }) => {
             {el}
           </button>
         ))}
+        <h5 onClick={() => onNext?.()}>
+          Следюший <GrFormNextLink />
+        </h5>
       </div>
     </div>
   );
