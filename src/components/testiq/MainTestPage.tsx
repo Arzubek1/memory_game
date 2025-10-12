@@ -5,6 +5,7 @@ import { FaChevronLeft } from "react-icons/fa6";
 import Page1 from "./Page1";
 import Page2 from "./Page2";
 import Page3 from "./Page3";
+import Page40 from "./Page40";
 
 const MainTestPage = () => {
   const [step, setStep] = useState(1);
@@ -30,6 +31,8 @@ const MainTestPage = () => {
             {step === 1 && <Page1 onNext={next} />}
             {step === 2 && <Page2 onNext={next} />}
             {step === 3 && <Page3 onNext={next} />}
+            {step === 4 && <Page40 onNext={next} />}
+           
           </div>
         </div>
       </div>
