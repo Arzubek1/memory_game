@@ -22,7 +22,6 @@ const One: React.FC<BlockProps> = ({ onNext }) => {
     if(isDisabled) return;
     setIsDisabled(true)
     dispatch(handleBlocks(true));
-    console.log("User chose:", choice);
     setTimeout(() => {
       onNext?.();
       dispatch(handleBlocks(false));
