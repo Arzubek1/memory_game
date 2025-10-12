@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import scss from "./MainTestPage.module.scss";
 import { FaChevronLeft } from "react-icons/fa6";
 import Page1 from "./Page1";
+import Page2 from "./Page2";
 
 const MainTestPage = () => {
   const [step, setStep] = useState(1);
@@ -25,7 +26,8 @@ const MainTestPage = () => {
             <span style={{ width: `${(step / 10) * 100}%` }}></span>
           </div>
           <div className={scss.blocks}>
-            <Page1 onNext={next} />
+            {step === 1 && <Page1 onNext={next} />}
+            {step === 2 && <Page2 onNext={next} />}
           </div>
         </div>
       </div>
