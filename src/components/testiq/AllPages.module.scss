@@ -87,7 +87,77 @@
 .page10{
   .text {
     p{
-      font-size: 14px;
+      font-size: 16px;
     }
   }
 }
+
+.resultBlock {
+  background: linear-gradient(160deg, #4b0082, #6a0dad);
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  width: 90%;
+  max-width: 400px;
+  animation: fadeIn 0.8s ease-in-out;
+
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #ffeb3b;
+  }
+
+  p {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+
+    span {
+      font-weight: 700;
+      color: #00ffcc;
+    }
+
+    b {
+      color: #ffeb3b;
+    }
+  }
+
+  h4 {
+    font-size: 1rem;
+    margin-top: 1rem;
+    color: #f5f5f5;
+  }
+
+  button {
+    background: #ffeb3b;
+    border: none;
+    border-radius: 8px;
+    padding: 0.6rem 1.2rem;
+    cursor: pointer;
+    font-weight: 600;
+    color: #333;
+    transition: 0.3s ease;
+
+    &:hover {
+      background: #f7d318;
+      transform: scale(1.05);
+    }
+
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+

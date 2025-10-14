@@ -13,10 +13,6 @@ const Hero = () => {
           <img src={"/testIQ.png"} alt="img" />
           <h1>🧠 Проверь свой IQ</h1>
         </div>
-        <div className={scss.block}>
-          <img src={"/brain-game.png"} alt="img" />
-          <h1>⚡ Игры для мозга</h1>
-        </div>
         <div className={scss.block} onClick={() => route.push("/memorykids")}>
           <img src={"/memory-for-kids.jpg"} alt="img" />
           <h1>🧩 Память для детей</h1>

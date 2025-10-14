@@ -28,8 +28,12 @@
     gap: 6rem;
     width: 100%;
     height: 100%;
-    background: #02506d42;
-    backdrop-filter: blur(4px);
+
+    @media (max-width: 432px) {
+      flex-direction: column;
+    }
+
+
     .block {
       width: 330px;
       height: 170px;
