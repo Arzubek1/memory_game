@@ -12,6 +12,7 @@ import Page7 from "./Page7";
 import Page8 from "./Page8";
 import Page9 from "./Page9";
 import Page10 from "./Page10";
+import Link from "next/link";
 
 const MainTestPage = () => {
   const [step, setStep] = useState(1);
@@ -21,10 +22,10 @@ const MainTestPage = () => {
       <div className="container">
         <div className={scss.content}>
           <div className={scss.top}>
-            <a href="/">
+            <Link href="/">
               {" "}
               <FaChevronLeft />
-            </a>
+            </Link>
             <h3>
               <span>{String(step).padStart(2, "0")}</span>
               <span>/10</span>

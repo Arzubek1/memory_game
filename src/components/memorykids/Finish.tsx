@@ -2,6 +2,7 @@ import React from "react";
 import scss from "./Blocks.module.scss";
 import { FaArrowLeft, FaRedoAlt } from "react-icons/fa";
 import { useAppSelector } from "@/hooks";
+import Link from "next/link";
 
 
 const Finish = () => {
@@ -15,9 +16,9 @@ const {count} = useAppSelector((s) => s.kidsStore)
         </p>
 
         <div className={scss.buttons}>
-          <a href="/" className={scss.back}>
+          <Link href="/" className={scss.back}>
             <FaArrowLeft /> Назад
-          </a>
+          </Link>
         </div>
       </div>
     </div>
