@@ -34,7 +34,7 @@ const One: React.FC<BlockProps> = ({ onNext }) => {
       <div className={scss.image}>
         <h4>Угадай животное</h4>
         <Image
-          src="/images/memorykids/dog.jpg"
+          src="/public/images/memoryKids/dog.jpg"
           alt="dog"
           width={380}
           height={220}
