@@ -8,6 +8,8 @@ import Page3 from "./Page3";
 import Page40 from "./Page40";
 import Page5 from "./Page5";
 import Page6 from "./Page6";
+import Page7 from "./Page7";
+import Page8 from "./Page8";
 
 const MainTestPage = () => {
   const [step, setStep] = useState(1);
@@ -36,6 +38,8 @@ const MainTestPage = () => {
             {step === 4 && <Page40 onNext={next} />}
             {step === 5 && <Page5 onNext={next} />}
             {step === 6 && <Page6 onNext={next} />}
+            {step === 7 && <Page7 onNext={next} />}
+            {step === 8 && <Page8 onNext={next} />}
            
           </div>
         </div>
